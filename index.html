@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>forms</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="bg">
+    <h2>MERRY CHRISTMAS</h2>
+    <h2>Wishlist Form</h2>
+    <div class="container">
+      <form id="signupForm" onsubmit="handleSubmit(event)">
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input type="text" id="firstName" name="firstName" required>
+        </div>
+        <div class="form-group">
+          <label for="middleName">Middle Name</label>
+          <input type="text" id="middleName" name="middleName" required>
+        </div>
+        <div class="form-group">
+          <label for="surname">Last Name</label>
+          <input type="text" id="surname" name="surname" required>
+        </div>
+        <div class="form-group">
+          <label for="gender">Gender</label>
+          <label for="male">Male</label>
+          <input type="radio" id="male" name="gender" value="male" required>
+          <label for="female">Female</label>
+          <input type="radio" id="female" name="gender" value="female">
+        </div>
+        <div class="form-group">
+          <label for="birthday">Birthday</label>
+          <input type="date" id="birthday" name="birthday" required>
+        </div>
+        <div class="form-group">
+          <label for="wish">Wishes</label>
+          <input type="text" id="wish" name="wish" required>
+        </div>
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <img src="img/klipartz.com.png" class="snta1">
+
+  <div id="output" class="output" style="display: none;">
+    <h3>Your Wishlist Submission</h3>
+    <p><strong>First Name:</strong> <span id="outputFirstName"></span></p>
+    <p><strong>Middle Name:</strong> <span id="outputMiddleName"></span></p>
+    <p><strong>Last Name:</strong> <span id="outputLastName"></span></p>
+    <p><strong>Gender:</strong> <span id="outputGender"></span></p>
+    <p><strong>Birthday:</strong> <span id="outputBirthday"></span></p>
+    <p><strong>Wish:</strong> <span id="outputWish"></span></p>
+  </div>
+
+
+  
+
+
+<script>
+function handleSubmit(event) {
+  event.preventDefault(); 
+  
+  const firstName = document.getElementById('firstName').value;
+  const middleName = document.getElementById('middleName').value;
+  const surname = document.getElementById('surname').value;
+  const gender = document.querySelector('input[name="gender"]:checked').value;
+  const birthday = document.getElementById('birthday').value;
+  const wish = document.getElementById('wish').value;
+
+  document.getElementById('outputFirstName').textContent = firstName;
+  document.getElementById('outputMiddleName').textContent = middleName;
+  document.getElementById('outputLastName').textContent = surname;
+  document.getElementById('outputGender').textContent = gender;
+  document.getElementById('outputBirthday').textContent = birthday;
+  document.getElementById('outputWish').textContent = wish;
+
+
+  document.getElementById('output').style.display = 'block';
+}
+</script>
+</body>
+</html>
